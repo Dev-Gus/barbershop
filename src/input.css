@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "./base.css";
+@import "./components.css";
+@import "./sections.css";
+
+@theme {
+  --color-bark:   #1C1008;
+  --color-bark-2: #2A1A0E;
+  --color-amber:  #C8843A;
+  --color-amber-2:#E09A4A;
+  --color-cream:  #F5EDD8;
+  --color-muted:  #A8967A;
+  --color-line:   #A0522D;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Lato', sans-serif;
+}
