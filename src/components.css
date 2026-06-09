@@ -76,8 +76,54 @@
   color: var(--color-muted);
 }
 
-/* ── Buttons ── */
-
 /* ── Service Card ── */
+.service-card {
+  background-color: var(--color-bark-2);
+}
+
+.service-card:hover {
+  background-color: #321E10;
+  outline: 1px solid rgba(200, 132, 58, 0.35);
+}
+
+.service-card-title {
+  color: var(--color-cream);
+}
+
+.service-card-desc {
+  color: var(--color-muted);
+}
+
+.service-card-price {
+  font-family: var(--font-display);
+  color: var(--color-amber);
+}
+
+.service-card-badge {
+  background-color: var(--color-amber);
+  color: var(--color-bark);
+}
 
 /* ── Stat Card ── */
+.stat-card {
+  background-color: var(--color-bark-2);
+  transition: background-color 0.2s ease;
+}
+
+.stat-card:hover {
+  background-color: #321E10;
+}
+
+.stat-card-value {
+  font-family: var(--font-display);
+  color: var(--color-cream);
+}
+
+.stat-card-value-accent {
+  font-family: var(--font-display);
+  color: var(--color-amber);
+}
+
+.stat-card-label {
+  color: var(--color-muted);
+}
