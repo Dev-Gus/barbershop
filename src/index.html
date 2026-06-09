@@ -447,5 +447,109 @@
         </p>
       </div>
     </section>
+
+    <!-- ══════════════════════════════════════
+     NOSOTROS
+  ══════════════════════════════════════ -->
+    <section id="nosotros" class="nosotros-section py-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <!-- Left: photo -->
+          <div class="relative">
+            <div
+              class="nosotros-photo aspect-[3/4] w-full max-w-sm mx-auto md:mx-0 relative overflow-hidden"
+            >
+              <img
+                src="../assets/img/maykol.jpg"
+                alt="Maykol - Barbero en Tacuarembó"
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+              <!-- Decorative grid pattern -->
+              <svg
+                class="absolute inset-0 w-full h-full opacity-5"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <pattern
+                    id="grid"
+                    width="32"
+                    height="32"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path
+                      d="M 32 0 L 0 0 0 32"
+                      fill="none"
+                      stroke="#C8843A"
+                      stroke-width="0.5"
+                    />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+              </svg>
+            </div>
+            <!-- Amber accent border offset -->
+            <div
+              class="nosotros-photo-border absolute -bottom-4 -right-4 w-full max-w-sm h-full max-h-full border md:block hidden"
+            ></div>
+          </div>
+
+          <!-- Right: text -->
+          <div class="flex flex-col gap-8">
+            <div>
+              <p class="section-label text-xs tracking-[0.3em] uppercase mb-4">
+                Quién está detrás de las tijeras
+              </p>
+              <h2 class="section-title text-5xl font-black leading-none mb-6">
+                Maykol
+              </h2>
+            </div>
+
+            <!-- Quote -->
+            <blockquote class="nosotros-quote border-l-2 pl-6">
+              <p
+                class="nosotros-quote-text text-xl font-light italic leading-relaxed"
+              >
+                "Crecer en el interior te enseña que el trabajo bien hecho habla
+                solo."
+              </p>
+            </blockquote>
+
+            <!-- Bio -->
+            <p class="section-desc text-sm leading-relaxed">
+              Maykol lleva años perfeccionando el oficio en Tacuarembó — no como
+              quien cumple un horario, sino como quien eligió esto. Cada corte
+              es trabajo de precisión. Cada cliente entra y recibe tiempo de
+              verdad, no atención en cadena. El resultado habla por sí mismo:
+              una clientela que vuelve, y que trae a otros.
+            </p>
+
+            <!-- Credentials -->
+            <div class="flex flex-col gap-4 pt-2">
+              <div class="flex items-center gap-4">
+                <div class="nosotros-credential-line w-8 h-px"></div>
+                <span
+                  class="nosotros-credential-text text-xs tracking-widest uppercase"
+                  >+8 años de experiencia</span
+                >
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="nosotros-credential-line w-8 h-px"></div>
+                <span
+                  class="nosotros-credential-text text-xs tracking-widest uppercase"
+                  >Tacuarembó, Uruguay</span
+                >
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="nosotros-credential-line w-8 h-px"></div>
+                <span
+                  class="nosotros-credential-text text-xs tracking-widest uppercase"
+                  >Corte, barba y afeitado clásico</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

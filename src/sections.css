@@ -145,6 +145,59 @@
 }
 
 /* ── Nosotros Section ── */
+.nosotros-section {
+  background-color: var(--color-bark-2);
+}
+
+.nosotros-photo {
+  background-color: var(--color-bark);
+}
+
+.nosotros-photo-placeholder {
+  color: var(--color-muted);
+}
+
+.nosotros-photo-border {
+  border-color: rgba(200, 132, 58, 0.25);
+  z-index: -1;
+  top: 16px;
+  left: 16px;
+}
+
+.nosotros-quote {
+  border-color: var(--color-amber);
+}
+
+.nosotros-quote-text {
+  color: var(--color-cream);
+  font-family: var(--font-display);
+}
+
+.nosotros-credential-line {
+  background-color: var(--color-amber);
+}
+
+.nosotros-credential-text {
+  color: var(--color-muted);
+}
+
+/* ── Galería Section ── */
+.galeria-section {
+  background-color: var(--color-bark);
+}
+
+.galeria-placeholder {
+  color: var(--color-muted);
+}
+
+/* ── Ubicación Section ── */
+.ubicacion-section {
+  background-color: var(--color-bark-2);
+}
+
+.ubicacion-placeholder {
+  color: var(--color-muted);
+}
 
 /* ── Galería Section ── */
 
