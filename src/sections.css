@@ -199,7 +199,325 @@
   color: var(--color-muted);
 }
 
-/* ── Galería Section ── */
+/* ─────────────────────────────────────────
+   GALERÍA
+───────────────────────────────────────── */
+
+.galeria-section {
+  background-color: var(--color-bark);
+  padding: 6rem 0;
+}
+
+.galeria-section .section-heading {
+  padding-bottom: 3rem;
+}
+
+.galeria-section .section-label {
+  color: #c8843a;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.galeria-section .section-title {
+  color: #f5edd8;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.galeria-section .section-subtitle {
+  color: rgba(245, 237, 216, 0.6);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.95rem;
+  max-width: 38ch;
+}
+
+/* Video feature */
+.galeria-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-height: 480px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(200, 132, 58, 0.3);
+}
+
+.galeria-video-hidden {
+  display: none;
+}
+
+.galeria-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.galeria-video-overlay {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  pointer-events: none;
+}
+
+.galeria-video-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-cream);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(28, 16, 8, 0.6);
+  padding: 0.3rem 0.75rem;
+  border-left: 2px solid var(--color-amber);
+}
+
+/* Masonry grid */
+.galeria-grid {
+  columns: 3;
+  column-gap: 0.75rem;
+}
+
+.galeria-item {
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid rgba(200, 132, 58, 0.15);
+  transition: border-color 0.3s ease;
+}
+
+.galeria-item:hover {
+  border-color: var(--color-amber);
+}
+
+/* Aspect ratio variants */
+.galeria-item--tall .galeria-placeholder {
+  aspect-ratio: 3 / 4;
+}
+
+.galeria-item--square .galeria-placeholder {
+  aspect-ratio: 1 / 1;
+}
+
+.galeria-item--wide .galeria-placeholder {
+  aspect-ratio: 4 / 3;
+}
+
+/* Placeholder state (removed when real photo is set as background-image) */
+.galeria-placeholder {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.galeria-item:hover .galeria-placeholder {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.galeria-placeholder-icon {
+  font-size: 2rem;
+  color: var(--color-amber);
+  opacity: 0.4;
+  line-height: 1;
+}
+
+.galeria-placeholder-text {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--color-cream);
+  opacity: 0.3;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Overlay on hover */
+.galeria-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 16, 8, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.galeria-item:hover .galeria-item-overlay {
+  opacity: 1;
+}
+
+.galeria-zoom-icon {
+  font-size: 2.5rem;
+  color: var(--color-amber);
+  line-height: 1;
+}
+
+/* ─────────────────────────────────────────
+   LIGHTBOX
+───────────────────────────────────────── */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(12, 7, 3, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 3px;
+  border: 1px solid rgba(200, 132, 58, 0.3);
+}
+
+/* Placeholder inside lightbox */
+.lightbox-placeholder {
+  width: 60vw;
+  max-width: 700px;
+  aspect-ratio: 4/3;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(200, 132, 58, 0.4);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--color-cream);
+}
+
+.lightbox-placeholder .lb-icon {
+  font-size: 4rem;
+  color: var(--color-amber);
+  opacity: 0.5;
+}
+
+.lightbox-placeholder .lb-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  opacity: 0.5;
+}
+
+/* Controls */
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  background: none;
+  border: none;
+  color: var(--color-cream);
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+  padding: 0.5rem;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  color: var(--color-amber);
+}
+
+.lightbox-close {
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.lightbox-prev {
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+}
+
+.lightbox-next {
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+}
+
+.lightbox-counter {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-cream);
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+
+/* ─────────────────────────────────────────
+   GALERÍA — RESPONSIVE
+───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .galeria-grid {
+    columns: 2;
+  }
+
+  .lightbox-prev {
+    left: 0.5rem;
+  }
+
+  .lightbox-next {
+    right: 0.5rem;
+  }
+
+  .lightbox-placeholder {
+    width: 85vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria-grid {
+    columns: 2;
+    column-gap: 0.5rem;
+  }
+
+  .galeria-item {
+    margin-bottom: 0.5rem;
+  }
+}
 
 /* ── Ubicación Section ── */
 
