@@ -1,4 +1,80 @@
 /* ── Navbar & Navigation ── */
+.navbar {
+  background-color: transparent;
+}
+
+.navbar-scrolled {
+  background-color: rgba(28, 16, 8, 0.97);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 rgba(200, 132, 58, 0.15);
+}
+
+.navbar-logo-first {
+  font-family: var(--font-display);
+  color: var(--color-cream);
+}
+
+.navbar-logo-second {
+  font-family: var(--font-display);
+  color: var(--color-amber);
+}
+
+.nav-link {
+  color: var(--color-muted);
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--color-amber);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.mobile-nav-link {
+  color: var(--color-muted);
+}
+
+.mobile-menu {
+  display: flex;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  background-color: var(--color-bark-2);
+  border-top: 1px solid rgba(160, 82, 45, 0.2);
+}
+
+.mobile-menu.is-open {
+  max-height: 400px;
+  opacity: 1;
+}
+
+/* ── Hamburger Menu ── */
+.hamburger-bar {
+  background-color: var(--color-cream);
+}
+
+.hamburger-bar-accent {
+  background-color: var(--color-amber);
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  background-color: var(--color-amber);
+  color: var(--color-bark);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(160, 82, 45, 0.4);
+  color: var(--color-muted);
+}
 
 /* ── Buttons ── */
 
