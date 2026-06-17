@@ -16,18 +16,29 @@ let open = false;
 
 btn.addEventListener("click", () => {
   open = !open;
-  menu.classList.toggle("is-open", open);
+  if (open) {
+    menu.style.display = "flex";
+    requestAnimationFrame(() => {
+      menu.classList.add("is-open");
+    });
+  } else {
+    menu.classList.remove("is-open");
+    menu.addEventListener("transitionend", () => {
+      menu.style.display = "none";
+    }, { once: true });
+  }
   bar1.style.transform = open ? "translateY(6px) rotate(45deg)" : "";
   bar2.style.opacity = open ? "0" : "1";
-  bar3.style.transform = open
-    ? "translateY(-6px) rotate(-45deg) scaleX(1.5)"
-    : "";
+  bar3.style.transform = open ? "translateY(-6px) rotate(-45deg) scaleX(1.5)" : "";
 });
 
 menu.querySelectorAll("a").forEach((a) => {
   a.addEventListener("click", () => {
     open = false;
     menu.classList.remove("is-open");
+    menu.addEventListener("transitionend", () => {
+      menu.style.display = "none";
+    }, { once: true });
     bar1.style.transform = "";
     bar2.style.opacity = "1";
     bar3.style.transform = "";

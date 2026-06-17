@@ -151,6 +151,8 @@
 
 .nosotros-photo {
   background-color: var(--color-bark);
+   border-radius: 3px;
+  overflow: hidden;
 }
 
 .nosotros-photo-placeholder {

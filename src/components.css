@@ -42,7 +42,7 @@
 }
 
 .mobile-menu {
-  display: flex;
+  display: none;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
